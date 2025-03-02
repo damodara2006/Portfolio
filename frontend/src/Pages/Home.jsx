@@ -1,14 +1,17 @@
 
         import { Link } from "react-router-dom";
-        import profile from "../assets/flake-2.BnWSExPC.png";
+        import profile from "../assets/profile.jpeg";
         import nptel from "../assets/1734502519880.jpeg";
+        import MKCE from "../assets/MKCE.png";
+        import Learnathon from "../assets/Learnathon.png"
+        import kongu from "../assets/Kongu.png";
         function Home() {
           return (
             <body className="bg-black flex flex-col">
               <div className="mb-3.5 relative">
                 <div className=" flex justify-between items-center h-14 bg-[linear-gradient(140deg,_#B7B1F2,_#F8BDEB)] rounded-[4px]">
                   <h1 className=" ml-11 sm:ml-4 lg:ml-10 xl:ml-16 font-extrabold">
-                    HOME
+                    PORTFOLIO
                   </h1>
                   <nav className=" flex justify-end  w-4/6  ">
                     <ul className="flex w-[100%] xl:ml-16 justify-evenly">
@@ -40,22 +43,38 @@
               </h1>
 
             <div className="flex justify-center items-center w-full">
-          <div className="relative sm:w-64 mt-5 rounded-md flex justify-center border w-72 h-72 border-white text-white">
-            <img src={profile} alt="Profile" />
+          <div className="relative sm:w-64 mt-5 rounded-t-full rounded-b-full flex justify-center border w-72 h-72 border-white text-white overflow-hidden">
+            <img className="w-full" src={profile} alt="Profile" />
           </div>
         </div>
 
               
-    
-        <div className="certificates mt-7 grid grid-cols-1 gap-7 justify-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 transition-transform duration-500 ease-in-out">
-          <div className="border border-white w-80 h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out">{ <img className="w-fit h-full rounded-2xl" src={nptel} alt="" /> }</div>
-          <div className="border border-white w-80 h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out"></div>
-          <div className="border border-white w-80 h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out"></div>
-          <div className="border border-white w-80 h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out"></div>
-          <div className="border border-white w-80 h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out"></div>
-          <div className="border border-white w-80 h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out"></div>
+    <p className=" text-center text-3xl text-rose-500 [text-shadow:_0_8px_8px_rgb(99_102_241_/_0.8)] backdrop:text-2xl font-extrabold font-mono mt-9">Achivements</p>
+        <div className=" flex justify-items-center gap-8 px-5 justify-evenly mt-7 flex-wrap ">
+          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">{ <img className="w-fit h-full " src={nptel} alt="" /> }</div>
+          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">{<img src={MKCE} alt="MKCE" />}  </div>
+          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">
+            {<img  src={Learnathon} />}
+          </div>
+          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">
+            {<img src={kongu}/>}
+          </div>
+          {/* <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out"></div>
+          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out"></div> */}
         </div>
-    
+
+        <div className="mt-10 text-white text-center text-3xl flex flex-col mb-4 " >
+          Contact
+          <form >
+            <input type="text" className="border rounde mb-1 rounded-sm text-sm py-1.5 w-80  pl-5" placeholder="Enter your email" /><br />
+            <input type="text" className="border rounde mb-1 rounded-sm text-sm py-1.5 w-80  pl-5 " placeholder="Message me"  /><br />
+            <button type="submit" className="text-sm border px-3 rounded-sm hover:bg-gray-800  transition-all "  >Submit</button>
+          </form>
+        </div>
+        <footer className="text-white text-center">
+         All rights reserved &copy; 2025
+        </footer>
+
             </body>
           );
         }
