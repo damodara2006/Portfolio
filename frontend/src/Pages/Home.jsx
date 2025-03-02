@@ -5,9 +5,27 @@
         import MKCE from "../assets/MKCE.png";
         import Learnathon from "../assets/Learnathon.png"
         import kongu from "../assets/Kongu.png";
+        import axios from "axios"
+        import { useState } from "react";
         function Home() {
+
+          const[email,setemail] = useState()
+          const[message,setmessage] = useState()
+
+          function handleClick(e){
+            e.preventDefault();
+            alert("Your message has been sent")
+            axios.post("https://formsubmit.co/damodara2006@gmail.com", { message, email})
+            .then(res=>{
+              console.log(res)
+            })
+            .catch(err=>{
+              console.log(err)
+            })
+          }
+          
           return (
-            <body className="bg-black flex flex-col">
+            <div className="bg-black flex flex-col">
               <div className="mb-3.5 relative">
                 <div className=" flex justify-between items-center h-14 bg-[linear-gradient(140deg,_#B7B1F2,_#F8BDEB)] rounded-[4px]">
                   <h1 className=" ml-11 sm:ml-4 lg:ml-10 xl:ml-16 font-extrabold">
@@ -51,10 +69,10 @@
               
     <p className=" text-center text-3xl text-rose-500 [text-shadow:_0_8px_8px_rgb(99_102_241_/_0.8)] backdrop:text-2xl font-extrabold font-mono mt-9">Achivements</p>
         <div className=" flex justify-items-center gap-8 px-5 justify-evenly mt-7 flex-wrap ">
-          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">{ <img className="w-fit h-full " src={nptel} alt="" /> }</div>
-          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">{<img src={MKCE} alt="MKCE" />}  </div>
+          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">{ <img className="w-full h-full " src={nptel} alt="NPTEL" /> }</div>
+          <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">{<img className="w-full h-full " src={MKCE} alt="MKCE" />}  </div>
           <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">
-            {<img  src={Learnathon} />}
+            {<img className="w-full h-full  "  src={Learnathon} />}
           </div>
           <div className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden">
             {<img src={kongu}/>}
@@ -65,19 +83,17 @@
 
         <div className="mt-10 text-white text-center text-3xl flex flex-col mb-4 " >
           Contact
-          <form >
-            <input type="text" className="border rounde mb-1 rounded-sm text-sm py-1.5 w-80  pl-5" placeholder="Enter your email" /><br />
-            <input type="text" className="border rounde mb-1 rounded-sm text-sm py-1.5 w-80  pl-5 " placeholder="Message me"  /><br />
-            <button type="submit" className="text-sm border px-3 rounded-sm hover:bg-gray-800  transition-all "  >Submit</button>
+          <form action={"https://formsubmit.co/damodara2006@gmail.com"} method="POST" >
+            <input type="text" name="email" className="border rounde mb-1 rounded-sm text-sm py-1.5 w-80  pl-5" placeholder="Enter your email" value={email} onChange={(e)=>setemail(e.target.value)}/><br />
+            <input type="text" name="name" className="border rounde mb-1 rounded-sm text-sm py-1.5 w-80  pl-5 " placeholder="Message me" value={message} onChange={(e)=>setmessage(e.target.value)} /><br />
+            <button className="text-sm border px-3 rounded-sm hover:bg-gray-800  transition-all " type="submit">Submit</button>
           </form>
         </div>
         <footer className="text-white text-center">
-         All rights reserved &copy; 2025
+         All rights reserved &copy; 2025 
         </footer>
-
-            </body>
+            </div>
           );
         }
-
         export default Home;
     
