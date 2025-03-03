@@ -5,11 +5,14 @@
       import profile from "../assets/profile.jpeg";
       // import axios from "axios";
       import { useEffect, useState } from "react";
+      import { FiAlignJustify } from "react-icons/fi";
 
       function Home() {
         const [email, setemail] = useState("");
         const [message, setmessage] = useState("");
         const [navbar ,setnavbar] = useState(true);
+        const [navbarcontent,setnavbarcontent] = useState(true);
+        let nav = ["Home","About","Achievements","Contact"];
 
         useEffect(() => {
           const handleResize = () => {
@@ -23,13 +26,18 @@
         
           handleResize(); 
           window.addEventListener("resize", handleResize); 
+
+         
         
            
         }, []);
+        console.log(navbarcontent)
         return (
+
+          
           <div id="home" className="bg-black flex flex-col !scroll-smooth">
             {" "}
-            
+           
             <div
               className={`fixed top-0 left-0 w-full bg-[linear-gradient(140deg,_#B7B1F2,_#F8BDEB)] shadow-md z-50 sm:${()=>{setnavbar(false)}}`}
             >
@@ -54,10 +62,25 @@
                       </li>
                     </ul>
                   </nav>
-                  : "ICON"
+                  : (<FiAlignJustify onClick={()=>setnavbarcontent(!navbarcontent)} />
+
+
+                
+                )
+                  
                 }
+
+            
               </div>
-            </div>
+
+            </div> 
+            {navbarcontent && <div className=" fixed text-white mt-14 right-0 w-32 h-40 z-50 bg-[linear-gradient(100deg,_#B7B1F2,_#F8BDEB)] flex justify-center " > 
+              <ul className="flex flex-col justify-items-center text-center justify-center ">
+                {nav.map((list,key)=>{
+                  return <li className="mb-1 text-black" key={key}> {list}</li>
+                })}
+              </ul>
+            </div>}
          
             <div className="mt-16 flex flex-col items-center">
               <h1 className="lg:text-4xl xl:text-4xl sm:text-3xl md:text-4xl text-3xl text-center font-mono font-extrabold text-white">
@@ -69,7 +92,7 @@
 
               <div className="flex justify-center items-center w-full">
                 <div className="relative sm:w-64 mt-5 rounded-full lg:rounded-full flex justify-center border w-72 h-72 border-white text-white overflow-hidden">
-                  <img className="w-full" src={profile} alt="Profile" />
+                  <img className="w-full" src={profile} alt="Profile z-10" />
                 </div>
               </div>
 
