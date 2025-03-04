@@ -6,7 +6,6 @@ import MKCE from "../assets/MKCE.png";
 import profile from "../assets/profile.jpeg";
 import { useEffect, useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
-import { PiLineVerticalBold } from "react-icons/pi";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
