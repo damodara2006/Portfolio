@@ -9,6 +9,7 @@ import { FiAlignJustify } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
+import { IoIosCall } from "react-icons/io";
 
 function Home() {
   const [email, setemail] = useState("");
@@ -16,6 +17,7 @@ function Home() {
   const [navbar, setnavbar] = useState(true);
   const [navbarcontent, setnavbarcontent] = useState(false);
   let nav = ["Home", "About", "Achievements", "Contact"];
+  const [showPhone, setShowPhone] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -122,13 +124,13 @@ function Home() {
         >
           Achievements
         </p>
-        <div className="flex justify-items-center gap-8 px-5 justify-evenly mt-7 flex-wrap">
+        <div className="flex justify-items-center gap-8 px-5 justify-evenly mt-7 flex-wrap transition-all">
           {[nptel, KIOT2024, MKCE, Learnathon, kongu].map((img, index) => (
             <div
               key={index}
               className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden"
             >
-              <img className="w-full h-full" src={img} alt="Achievement" />
+              <img className="w-full h-full transition-all" src={img} alt="Achievement" />
             </div>
           ))}
         </div>
@@ -180,12 +182,25 @@ function Home() {
         </div>
 
         <footer className="text-white text-center mt-5  w-full">
-          <h1 className="font-extrabold" >Get Me On</h1><br />
-          <div className=" relative flex justify-evenly w-full pr-[45%] pl-[45%] " > 
+          <h1 className="font-extrabold felx flex-wrap justify-center text-center" >Get Me On</h1><br />
+          <div className=" transition-all relative flex justify-evenly w-full sm:pr-[30%] sm:pl-[30%] pr-[30%] pl-[30%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]" > 
           <a className="flex items-center drop-shadow-md hover:text-blue-600 text-2xl transition-all hover:text-3xl " href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"> <FaLinkedinIn /></a>
           <a className="flex items-center drop-shadow-md hover:text-green-600 text-2xl transition-all hover:text-3xl " href="https://github.com/damodara2006"> <SiGithub /></a>
           <a className="flex items-center drop-shadow-md hover:text-pink-600 text-2xl transition-all hover:text-3xl " href="https://www.instagram.com/its_me_pdp28/"> <FaInstagram /></a>
-          </div>
+          <div
+              className="relative flex items-center drop-shadow-md text-2xl transition-all hover:text-3xl "
+              onMouseEnter={() => setShowPhone(true)}
+              onMouseLeave={() => setShowPhone(false)}
+            >
+              <IoIosCall />
+              {showPhone && (
+                <p className="text-white absolute  hover:text-purple-600 z-40 bg-black text-2xl rounded font-mono">
+                  9043402788
+                </p>
+              )}
+            </div> 
+  
+     </div>
           
         </footer> 
 
