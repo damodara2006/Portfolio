@@ -6,12 +6,16 @@ import MKCE from "../assets/MKCE.png";
 import profile from "../assets/profile.jpeg";
 import { useEffect, useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
+import { PiLineVerticalBold } from "react-icons/pi";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { SiGithub } from "react-icons/si";
+import { FaInstagram } from "react-icons/fa";
 
 function Home() {
   const [email, setemail] = useState("");
   const [message, setmessage] = useState("");
   const [navbar, setnavbar] = useState(true);
-  const [navbarcontent, setnavbarcontent] = useState(true);
+  const [navbarcontent, setnavbarcontent] = useState(false);
   let nav = ["Home", "About", "Achievements", "Contact"];
 
   useEffect(() => {
@@ -57,8 +61,10 @@ function Home() {
               </ul>
             </nav>
           ) : (
-            <FiAlignJustify onClick={() => setnavbarcontent(!navbarcontent)} />
-          )}
+            !navbarcontent ? 
+            <FiAlignJustify className="cursor-grab " onClick={  () =>setnavbarcontent(!navbarcontent)} />
+            : <h1 className={"cursor-grab"} onClick={()=>setnavbarcontent(!navbarcontent)} >X</h1>
+          )} 
         </div>
       </div>
       {navbarcontent && !navbar && (
@@ -174,9 +180,18 @@ function Home() {
           </form>
         </div>
 
-        <footer className="text-white text-center mt-5">
-          All rights reserved &copy; 2025
-        </footer>
+        <footer className="text-white text-center mt-5  w-full">
+          <h1 className="font-extrabold" >Get Me On</h1><br />
+          <div className=" relative flex justify-evenly w-full pr-[45%] pl-[45%] " > 
+          <a className="flex items-center drop-shadow-md hover:text-blue-600 text-2xl transition-all hover:text-3xl " href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"> <FaLinkedinIn /></a>
+          <a className="flex items-center drop-shadow-md hover:text-green-600 text-2xl transition-all hover:text-3xl " href="https://github.com/damodara2006"> <SiGithub /></a>
+          <a className="flex items-center drop-shadow-md hover:text-pink-600 text-2xl transition-all hover:text-3xl " href="https://www.instagram.com/its_me_pdp28/"> <FaInstagram /></a>
+          </div>
+          
+        </footer> 
+
+        <div><br />
+        <br /><br /></div>
       </div>
     </div>
   );
