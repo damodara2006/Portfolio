@@ -4,34 +4,34 @@ import kongu from "../assets/Kongu.png";
 import Learnathon from "../assets/Learnathon.png";
 import MKCE from "../assets/MKCE.png";
 import profile from "../assets/profile.jpeg";
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { FiAlignJustify } from "react-icons/fi";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { SiGithub } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FiAlignJustify } from "react-icons/fi";
 import { IoIosCall } from "react-icons/io";
-import axios from "axios"
+import { SiGithub } from "react-icons/si";
+import { ToastContainer, toast } from "react-toastify";
+
 function Home() {
   const [email, setemail] = useState("");
   const [message, setmessage] = useState("");
   const [navbar, setnavbar] = useState(true);
   const [navbarcontent, setnavbarcontent] = useState(false);
   let nav = ["Home", "About", "Achievements", "Contact"];
-  const [call,setcall] = useState(false);
-  let [width ,setwidth] = useState()
-  const [name , setname] = useState();
+  const [call, setcall] = useState(false);
+  let [width, setwidth] = useState();
+  const [name, setname] = useState();
 
-
-  useEffect(()=>{
-    axios.get("https://portfolio-mee6.onrender.com",{withCredentials:true})
-    .then(res=>{
-      setname(res.data.name)
-      name.toLowerCase()
-    })
-    .catch(res=>console.log(res))
-  })
-
-
+  useEffect(() => {
+    axios
+      .get("https://portfolio-mee6.onrender.com", { withCredentials: true })
+      .then((res) => {
+        setname(res.data.name);
+        name.toLowerCase();
+      })
+      .catch((res) => console.log(res));
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,14 +47,14 @@ function Home() {
     window.addEventListener("resize", handleResize);
   }, []);
 
-
-   window.addEventListener("resize",()=>{
+  window.addEventListener("resize", () => {
     width = window.innerWidth + " X " + window.innerHeight;
-    setwidth(width)
-   })
+    setwidth(width);
+  });
+  function handleClick() {
+    toast.info("Please wait");
+  }
   return (
-
-    
     <div id="home" className="bg-black flex flex-col !scroll-smooth">
       {" "}
       <div
@@ -83,11 +83,19 @@ function Home() {
                 </li>
               </ul>
             </nav>
+          ) : !navbarcontent ? (
+            <FiAlignJustify
+              className="cursor-grab mr-3"
+              onClick={() => setnavbarcontent(!navbarcontent)}
+            />
           ) : (
-            !navbarcontent ? 
-            <FiAlignJustify  className="cursor-grab mr-3" onClick={  () =>setnavbarcontent(!navbarcontent)} />
-            : <h1 className={"cursor-grab"} onClick={()=>setnavbarcontent(!navbarcontent)} >X</h1>
-          )} 
+            <h1
+              className={"cursor-grab"}
+              onClick={() => setnavbarcontent(!navbarcontent)}
+            >
+              X
+            </h1>
+          )}
         </div>
       </div>
       {navbarcontent && !navbar && (
@@ -108,10 +116,10 @@ function Home() {
       )}
       <div className="mt-16 flex flex-col items-center">
         <h1 className="lg:text-4xl xl:text-4xl sm:text-3xl md:text-4xl text-3xl text-center font-mono font-extrabold text-white">
-      <p className="text-white text-sm absolute right-0 mr-3" >{width}</p>
+          <p className="text-white text-sm absolute right-0 mr-3">{width}</p>
           <span>HELLO!</span> <br />I AM{" "}
           <span className="relative text-green-500 after:content-[''] after:absolute after:w-0 after:bottom-0 after:bg-black after:h-full after:right-0  after:transition-all after:duration-200">
-           <>{name}</>
+            <>{name}</>
           </span>
         </h1>
         <div className="flex justify-center items-center w-full">
@@ -152,7 +160,11 @@ function Home() {
               key={index}
               className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden"
             >
-              <img className="w-full h-full transition-all" src={img} alt="Achievement" />
+              <img
+                className="w-full h-full transition-all"
+                src={img}
+                alt="Achievement"
+              />
             </div>
           ))}
         </div>
@@ -195,36 +207,77 @@ function Home() {
             />
             <br />
             <button
+              onClick={() => handleClick()}
               className="text-sm border px-3 rounded-sm hover:bg-gray-800 transition-all"
               type="submit"
             >
               Submit
             </button>
+            <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </form>
         </div>
 
         <footer className="text-white text-center mt-5  w-full">
-          <h1 className="font-extrabold felx flex-wrap justify-center text-center" >Get Me On</h1> <br />
-          <div className=" transition-all relative flex justify-evenly w-full sm:pr-[30%] sm:pl-[30%] pr-[30%] pl-[30%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]" > 
-          <a className="flex items-center drop-shadow-md hover:text-blue-600 text-2xl transition-all hover:text-3xl " href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"> <FaLinkedinIn /></a>
-          <a className="flex items-center drop-shadow-md hover:text-green-600 text-2xl transition-all hover:text-3xl " href="https://github.com/damodara2006"> <SiGithub /></a>
-          <a className="flex items-center drop-shadow-md hover:text-pink-600 text-2xl transition-all hover:text-3xl " href="https://www.instagram.com/its_me_pdp28/"> <FaInstagram /></a>
-          <div
-              className="relative flex items-center drop-shadow-md text-2xl transition-all hover:text-3xl hover:text-purple-600 "
-              
+          <h1 className="font-extrabold felx flex-wrap justify-center text-center">
+            Get Me On
+          </h1>{" "}
+          <br />
+          <div className=" transition-all relative flex justify-evenly w-full sm:pr-[30%] sm:pl-[30%] pr-[30%] pl-[30%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]">
+            <a
+              className="flex items-center drop-shadow-md hover:text-blue-600 text-2xl transition-all hover:text-3xl "
+              href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"
             >
-              <IoIosCall onClick={()=>setcall(!call)} />
-             
-            </div> 
-           
-  
-     </div>
-     <br />
-     {call ? <p onClick={()=>setcall(!call)} className="text-sm transition-all" >  9043402788</p> : <div className="w-full h-2">{" "}</div>}
-        </footer> 
+              {" "}
+              <FaLinkedinIn />
+            </a>
+            <a
+              className="flex items-center drop-shadow-md hover:text-green-600 text-2xl transition-all hover:text-3xl "
+              href="https://github.com/damodara2006"
+            >
+              {" "}
+              <SiGithub />
+            </a>
+            <a
+              className="flex items-center drop-shadow-md hover:text-pink-600 text-2xl transition-all hover:text-3xl "
+              href="https://www.instagram.com/its_me_pdp28/"
+            >
+              {" "}
+              <FaInstagram />
+            </a>
+            <div className="relative flex items-center drop-shadow-md text-2xl transition-all hover:text-3xl hover:text-purple-600 ">
+              <IoIosCall onClick={() => setcall(!call)} />
+            </div>
+          </div>
+          <br />
+          {call ? (
+            <p
+              onClick={() => setcall(!call)}
+              className="text-sm transition-all"
+            >
+              {" "}
+              9043402788
+            </p>
+          ) : (
+            <div className="w-full h-2"> </div>
+          )}
+        </footer>
 
-        <div><br />
-        <br /><br /></div>
+        <div>
+          <br />
+          <br />
+          <br />
+        </div>
       </div>
     </div>
   );
