@@ -215,7 +215,7 @@ function Home() {
             </button>
             <ToastContainer
               position="top-center"
-              autoClose={5000}
+              autoClose={20000}
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick={false}
