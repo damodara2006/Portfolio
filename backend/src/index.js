@@ -8,7 +8,7 @@ dotenv.config({
 })
 
 app.use(cors({
-    origin:"https://portfolio-frontend-swwd.onrender.com/",
+    origin:"https://portfolio-frontend-swwd.onrender.com",
     credentials:true
 }))
 
