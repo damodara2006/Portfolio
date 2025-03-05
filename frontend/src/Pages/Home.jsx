@@ -10,7 +10,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
-
+import axios from "axios"
 function Home() {
   const [email, setemail] = useState("");
   const [message, setmessage] = useState("");
@@ -19,6 +19,19 @@ function Home() {
   let nav = ["Home", "About", "Achievements", "Contact"];
   const [call,setcall] = useState(false);
   let [width ,setwidth] = useState()
+  const [name , setname] = useState();
+
+
+  useEffect(()=>{
+    axios.get("http://localhost:8000",{withCredentials:true})
+    .then(res=>{
+      setname(res.data.name)
+      name.toLowerCase()
+    })
+    .catch(res=>console.log(res))
+  })
+
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,8 +52,6 @@ function Home() {
     width = window.innerWidth + " X " + window.innerHeight;
     setwidth(width)
    })
-
-   console.log(width)
   return (
 
     
@@ -100,7 +111,7 @@ function Home() {
       <p className="text-white text-sm absolute right-0 mr-3" >{width}</p>
           <span>HELLO!</span> <br />I AM{" "}
           <span className="relative text-green-500 after:content-[''] after:absolute after:w-0 after:bottom-0 after:bg-black after:h-full after:right-0  after:transition-all after:duration-200">
-            DAMODARA PRAKASH P
+           <>{name}</>
           </span>
         </h1>
         <div className="flex justify-center items-center w-full">
