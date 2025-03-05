@@ -17,7 +17,8 @@ function Home() {
   const [navbar, setnavbar] = useState(true);
   const [navbarcontent, setnavbarcontent] = useState(false);
   let nav = ["Home", "About", "Achievements", "Contact"];
-  const [showPhone, setShowPhone] = useState(false);
+  const [call,setcall] = useState(false);
+  let [width ,setwidth] = useState()
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,7 +33,17 @@ function Home() {
     handleResize();
     window.addEventListener("resize", handleResize);
   }, []);
+
+
+   window.addEventListener("resize",()=>{
+    width = window.innerWidth + " X " + window.innerHeight;
+    setwidth(width)
+   })
+
+   console.log(width)
   return (
+
+    
     <div id="home" className="bg-black flex flex-col !scroll-smooth">
       {" "}
       <div
@@ -86,12 +97,12 @@ function Home() {
       )}
       <div className="mt-16 flex flex-col items-center">
         <h1 className="lg:text-4xl xl:text-4xl sm:text-3xl md:text-4xl text-3xl text-center font-mono font-extrabold text-white">
+      <p className="text-white text-sm absolute right-0 mr-3" >{width}</p>
           <span>HELLO!</span> <br />I AM{" "}
-          <span className="relative text-green-500 after:content-[''] after:absolute after:w-0 after:bottom-0 after:bg-black after:h-full after:right-0 hover:after:w-full after:transition-all after:duration-200">
+          <span className="relative text-green-500 after:content-[''] after:absolute after:w-0 after:bottom-0 after:bg-black after:h-full after:right-0  after:transition-all after:duration-200">
             DAMODARA PRAKASH P
           </span>
         </h1>
-
         <div className="flex justify-center items-center w-full">
           <div className="relative sm:w-64 mt-5 rounded-full lg:rounded-full flex justify-center border w-72 h-72 border-white text-white overflow-hidden">
             <img className="w-full" src={profile} alt="Profile z-10" />
@@ -182,26 +193,23 @@ function Home() {
         </div>
 
         <footer className="text-white text-center mt-5  w-full">
-          <h1 className="font-extrabold felx flex-wrap justify-center text-center" >Get Me On</h1><br />
+          <h1 className="font-extrabold felx flex-wrap justify-center text-center" >Get Me On</h1> <br />
           <div className=" transition-all relative flex justify-evenly w-full sm:pr-[30%] sm:pl-[30%] pr-[30%] pl-[30%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]" > 
           <a className="flex items-center drop-shadow-md hover:text-blue-600 text-2xl transition-all hover:text-3xl " href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"> <FaLinkedinIn /></a>
           <a className="flex items-center drop-shadow-md hover:text-green-600 text-2xl transition-all hover:text-3xl " href="https://github.com/damodara2006"> <SiGithub /></a>
           <a className="flex items-center drop-shadow-md hover:text-pink-600 text-2xl transition-all hover:text-3xl " href="https://www.instagram.com/its_me_pdp28/"> <FaInstagram /></a>
           <div
-              className="relative flex items-center drop-shadow-md text-2xl transition-all hover:text-3xl "
-              onMouseEnter={() => setShowPhone(true)}
-              onMouseLeave={() => setShowPhone(false)}
+              className="relative flex items-center drop-shadow-md text-2xl transition-all hover:text-3xl hover:text-purple-600 "
+              
             >
-              <IoIosCall />
-              {showPhone && (
-                <p className="text-white absolute  hover:text-purple-600 z-40 bg-black text-2xl rounded font-mono">
-                  9043402788
-                </p>
-              )}
+              <IoIosCall onClick={()=>setcall(!call)} />
+             
             </div> 
+           
   
      </div>
-          
+     <br />
+     {call ? <p onClick={()=>setcall(!call)} className="text-sm transition-all" >  9043402788</p> : <div className="w-full h-2">{" "}</div>}
         </footer> 
 
         <div><br />
