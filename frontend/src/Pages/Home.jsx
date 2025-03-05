@@ -74,7 +74,7 @@ function Home() {
             </nav>
           ) : (
             !navbarcontent ? 
-            <FiAlignJustify className="cursor-grab " onClick={  () =>setnavbarcontent(!navbarcontent)} />
+            <FiAlignJustify  className="cursor-grab mr-3" onClick={  () =>setnavbarcontent(!navbarcontent)} />
             : <h1 className={"cursor-grab"} onClick={()=>setnavbarcontent(!navbarcontent)} >X</h1>
           )} 
         </div>
