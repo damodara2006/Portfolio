@@ -177,7 +177,7 @@ function Home() {
             method="POST"
           >
             <input
-              type="text"
+              type="email"
               name="email"
               className="border rounded-sm mb-1 text-sm py-1.5 w-80 pl-5"
               placeholder="Enter your email"
