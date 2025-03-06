@@ -182,17 +182,17 @@ function Home() {
                 <li
                 className="relative group  p-6 border rounded-2xl shadow-lg shadow-gray-300 border-white h-64 
                            after:content-[''] after:w-full after:h-full after:opacity-0 
-                           group-hover:after:opacity-100 after:transition-all after:duration-200 
+                           group-hover:after:opacity-100 group-active:after:opacity-100  after:transition-all after:duration-200 
                            after:ease-in-out after:bg-black after:top-0 after:left-0 
                            after:rounded-2xl after:z-0 after:absolute"
                 key={key}
               >
                 <img
-                  className="rounded-md transition-all duration-200 ease-in-out w-72 h-52 group-hover:opacity-0"
+                  className="rounded-md transition-all duration-200 ease-in-out w-72 h-52 group-hover:opacity-0 group-active:opacity-0 "
                   src={list}
                   alt="Image"
                 />
-                <p className="absolute inset-0 flex items-center justify-center text-white opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100">
+                <p className="absolute inset-0 flex items-center justify-center text-white opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 group-active:opacity-100 ">
                 {key === 1 ? <p  className="flex flex-wrap text-center font-mono w-40" >WI-FI CONTROLLED CAR USING AURDINO</p> : ""}
                   {key === 0 ? <p className="flex flex-wrap text-center font-mono w-40 ">TRAIN ACCIDENT PREVENTION</p>  : ""}
                 </p>
