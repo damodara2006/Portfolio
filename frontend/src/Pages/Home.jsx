@@ -294,7 +294,7 @@ function Home() {
               <IoIosCall onClick={() => setcall(!call)} />
             </div>
             <a
-              className="flex items-center drop-shadow-md hover:text-pink-600 active:text-red-600 text-2xl transition-all hover:text-3xl "
+              className="flex items-center drop-shadow-md hover:text-gray-600 active:text-gray-600 text-2xl transition-all hover:text-3xl "
               href="https://x.com/DPrakash96227"
             >
               {" "}
