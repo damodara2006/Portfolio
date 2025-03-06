@@ -207,7 +207,7 @@ function Home() {
           <a
             href="/Damodara prakash Resume.pdf"
             download="Damodara_prakash_Resume.pdf"
-            className="text-white bg-green-600 px-4 py-2 rounded-md hover:bg-green-700 transition-all"
+            className="text-white bg-green-600 px-4 py-2 rounded-md active:bg-green-700 hover:bg-green-700  transition-all"
           >
             Download Resume
           </a>
