@@ -269,27 +269,27 @@ function Home() {
           <br />
           <div className=" transition-all relative flex justify-evenly w-full sm:pr-[30%] sm:pl-[30%] pr-[30%] pl-[30%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]">
             <a
-              className="flex items-center drop-shadow-md hover:text-blue-600 text-2xl transition-all hover:text-3xl "
+              className="flex items-center drop-shadow-md hover:text-blue-600 active:text-blue-600 text-2xl transition-all hover:text-3xl "
               href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"
             >
               {" "}
               <FaLinkedinIn />
             </a>
             <a
-              className="flex items-center drop-shadow-md hover:text-green-600 text-2xl transition-all hover:text-3xl "
+              className="flex items-center drop-shadow-md hover:text-green-600 active:text-green-600 text-2xl transition-all hover:text-3xl "
               href="https://github.com/damodara2006"
             >
               {" "}
               <SiGithub />
             </a>
             <a
-              className="flex items-center drop-shadow-md hover:text-pink-600 text-2xl transition-all hover:text-3xl "
+              className="flex items-center drop-shadow-md hover:text-pink-600 active:text-red-600 text-2xl transition-all hover:text-3xl "
               href="https://www.instagram.com/its_me_pdp28/"
             >
               {" "}
               <FaInstagram />
             </a>
-            <div className="relative flex items-center drop-shadow-md text-2xl transition-all hover:text-3xl hover:text-purple-600 ">
+            <div className="relative flex items-center drop-shadow-md text-2xl transition-all active:text-purple-600  hover:text-3xl hover:text-purple-600 ">
               <IoIosCall onClick={() => setcall(!call)} />
             </div>
           </div>
