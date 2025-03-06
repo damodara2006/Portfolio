@@ -128,9 +128,10 @@ function Home() {
           <div className="relative sm:w-64 mt-5 rounded-full lg:rounded-full flex justify-center border w-72 h-72 border-white text-white overflow-hidden">
             <img className="w-full" src={profile} alt="Profile z-10" />
           </div>
+          <div id="about" ></div>
         </div>
 
-        <div className="flex px-16" id="about">
+        <div className="flex px-16" >
           <p className="text-gray-300 font-mono text-center mt-8">
             I’m <b className="text-rose-500">Damodara Prakash</b>, a{" "}
             <b className="text-blue-400">Computer Science and Engineering</b>{" "}
@@ -149,9 +150,8 @@ function Home() {
             <b className="text-yellow-300">MongoDB</b>.
           </p>
         </div>
-
+        <div  id="achievements" ></div>
         <p
-          id="achievements"
           className="text-center text-3xl text-rose-500 font-extrabold font-mono mt-9"
         >
           Achievements
