@@ -176,11 +176,11 @@ function Home() {
           className="w-[100%] flex justify-center
         "
         >
-          <ul className=" mt-7 flex flex-wrap justify-evenly items-center gap-x-16 gap-y-8 px-1">
+          <ul className=" mt-7 flex flex-wrap justify-evenly items-center gap-x-16 gap-y-8">
             {[Train, Wificar].map((list, key) => {
               return (
                 <li
-                className="relative group shrink-0 p-6 border rounded-2xl shadow-lg shadow-gray-300 border-white h-64 
+                className="relative group  p-6 border rounded-2xl shadow-lg shadow-gray-300 border-white h-64 
                            after:content-[''] after:w-full after:h-full after:opacity-0 
                            group-hover:after:opacity-100 after:transition-all after:duration-200 
                            after:ease-in-out after:bg-black after:top-0 after:left-0 
