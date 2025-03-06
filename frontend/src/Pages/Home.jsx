@@ -14,6 +14,7 @@ import { FiAlignJustify } from "react-icons/fi";
 import { IoIosCall } from "react-icons/io";
 import { SiGithub } from "react-icons/si";
 import { ToastContainer, toast } from "react-toastify";
+import { BsTwitterX } from "react-icons/bs";
 
 function Home() {
   const [email, setemail] = useState("");
@@ -26,7 +27,7 @@ function Home() {
   const [name, setname] = useState();
 
   useEffect(() => {
-    axios
+   axios
       .get("https://portfolio-mee6.onrender.com", { withCredentials: true })
       .then((res) => {
         setname(res.data.name);
@@ -292,6 +293,13 @@ function Home() {
             <div className="relative flex items-center drop-shadow-md text-2xl transition-all active:text-purple-600  hover:text-3xl hover:text-purple-600 ">
               <IoIosCall onClick={() => setcall(!call)} />
             </div>
+            <a
+              className="flex items-center drop-shadow-md hover:text-pink-600 active:text-red-600 text-2xl transition-all hover:text-3xl "
+              href="https://x.com/DPrakash96227"
+            >
+              {" "}
+              <BsTwitterX />
+            </a>
           </div>
           <br />
           {call ? (
