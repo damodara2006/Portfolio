@@ -5,7 +5,7 @@ import Learnathon from "../assets/Learnathon.png";
 import MKCE from "../assets/MKCE.png";
 import Train from "../assets/Train.jpeg";
 import Wificar from "../assets/WIFI-car.jpeg";
-import profile from "../assets/Profile.jpeg"
+import profile from "../assets/Profile1.jpeg"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
