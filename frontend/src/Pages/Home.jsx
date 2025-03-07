@@ -5,7 +5,7 @@ import Learnathon from "../assets/Learnathon.png";
 import MKCE from "../assets/MKCE.png";
 import Train from "../assets/Train.jpeg";
 import Wificar from "../assets/WIFI-car.jpeg";
-import profile from "../assets/profile.jpeg";
+import profile from "../assets/Profile.jpeg"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
@@ -145,7 +145,7 @@ function Home() {
           </span>
         </h1>
         <div className="flex justify-center items-center w-full">
-          <div className="relative sm:w-64 mt-5 rounded-full lg:rounded-full flex justify-center border w-72 h-72 border-white text-white overflow-hidden" data-aos="flip-down" data-aos-duration="900">
+          <div className="relative mt-5 rounded-full lg:rounded-full flex justify-center  w-64 text-white overflow-hidden" data-aos="flip-down" data-aos-duration="900">
             <img className="w-full" src={profile} alt="Profile z-10" />
           </div>
           <div id="about" ></div>
