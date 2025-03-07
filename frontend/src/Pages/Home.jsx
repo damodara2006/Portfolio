@@ -277,7 +277,7 @@ function Home() {
             Get Me On
           </h1>{" "}
           <br />
-          <div className=" transition-all relative flex justify-evenly w-full sm:pr-[30%] sm:pl-[30%] pr-[30%] pl-[30%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]" >
+          <div className=" transition-all relative flex justify-evenly w-full  sm:pr-[30%] sm:pl-[30%] pr-[20%] pl-[20%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]" >
             <a
               className="flex items-center drop-shadow-md hover:text-blue-600 active:text-blue-600 text-2xl transition-all hover:text-3xl "
               href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"data-aos="fade-right" 
