@@ -15,6 +15,8 @@ import { IoIosCall } from "react-icons/io";
 import { SiGithub } from "react-icons/si";
 import { ToastContainer, toast } from "react-toastify";
 import { BsTwitterX } from "react-icons/bs";
+import AOS from  "aos"
+import 'aos/dist/aos.css';
 
 function Home() {
   const [email, setemail] = useState("");
@@ -25,6 +27,10 @@ function Home() {
   const [call, setcall] = useState(false);
   let [width, setwidth] = useState();
   const [name, setname] = useState();
+
+  useEffect(()=>{
+    AOS.init({duration:600})
+  })
 
   useEffect(() => {
    axios
@@ -48,6 +54,7 @@ function Home() {
 
     handleResize();
     window.addEventListener("resize", handleResize);
+    AOS.refresh();
   }, []);
 
   window.addEventListener("resize", () => {
@@ -58,14 +65,14 @@ function Home() {
     toast.info("Please wait");
   }
   return (
-    <div id="home" className="bg-black flex flex-col !scroll-smooth">
+    <div id="home" className="bg-black flex flex-col !scroll-smooth overflow-hidden " >
       {" "}
       <div
         className={`fixed top-0 left-0 w-full bg-[linear-gradient(140deg,_#B7B1F2,_#F8BDEB)] shadow-md z-50 sm:${() => {
           setnavbar(false);
-        }}`}
+        }}`} data-aos="slide-down" data-aos-duration="600"
       >
-        <div className="flex justify-between items-center h-14 px-5 lg:px-10 rounded-[4px]">
+        <div className="flex justify-between items-center h-14 px-5 lg:px-10 rounded-[4px]" >
           <h1 className="font-extrabold">PORTFOLIO</h1>
           {navbar ? (
             <nav className="w-4/6 flex justify-end">
@@ -126,13 +133,13 @@ function Home() {
           </span>
         </h1>
         <div className="flex justify-center items-center w-full">
-          <div className="relative sm:w-64 mt-5 rounded-full lg:rounded-full flex justify-center border w-72 h-72 border-white text-white overflow-hidden">
+          <div className="relative sm:w-64 mt-5 rounded-full lg:rounded-full flex justify-center border w-72 h-72 border-white text-white overflow-hidden" data-aos="flip-down" data-aos-duration="900">
             <img className="w-full" src={profile} alt="Profile z-10" />
           </div>
           <div id="about" ></div>
         </div>
 
-        <div className="flex px-16" >
+        <div className="flex px-16" data-aos="fade-up" data-aos-duration="600" >
           <p className="text-gray-300 font-mono text-center mt-8">
             I’m <b className="text-rose-500">Damodara Prakash</b>, a{" "}
             <b className="text-blue-400">Computer Science and Engineering</b>{" "}
@@ -157,11 +164,11 @@ function Home() {
         >
           Achievements
         </p>
-        <div className="flex justify-items-center gap-8 px-5 justify-evenly mt-7 flex-wrap transition-all">
+        <div className="flex justify-items-center gap-8 px-5 justify-evenly mt-7 flex-wrap transition-all" >
           {[nptel, KIOT2024, MKCE, Learnathon, kongu].map((img, index) => (
             <div
               key={index}
-              className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden"
+              className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden"  data-aos="slide-right" data-aos-duration="600" data-aos-once = "false"
             >
               <img
                 className="w-full h-full transition-all"
@@ -185,7 +192,7 @@ function Home() {
                            after:content-[''] after:w-full after:h-full after:opacity-0 
                            group-hover:after:opacity-100 group-active:after:opacity-100  after:transition-all after:duration-200 
                            after:ease-in-out after:bg-black after:top-0 after:left-0 
-                           after:rounded-2xl after:z-0 after:absolute"
+                           after:rounded-2xl after:z-0 after:absolute" data-aos="slide-left" data-aos-duration = "600"
                 key={key}
               >
                 <img
@@ -204,7 +211,7 @@ function Home() {
           </ul>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-12" data-aos="fade-up" data-aos-duration="800">
           <a
             href="/Damodara prakash Resume.pdf"
             download="Damodara_prakash_Resume.pdf"
@@ -217,6 +224,7 @@ function Home() {
         <div
           id="contact"
           className="mt-10 text-white text-center text-3xl flex flex-col mb-4"
+          data-aos="flip-up"
         >
           Contact
           <form
@@ -264,38 +272,38 @@ function Home() {
         </div>
 
         <footer className="text-white text-center mt-5  w-full">
-          <h1 className="font-extrabold felx flex-wrap justify-center text-center">
+          <h1 className="font-extrabold felx flex-wrap justify-center text-center" data-aos="fade" data-aos-duration="1500">
             Get Me On
           </h1>{" "}
           <br />
-          <div className=" transition-all relative flex justify-evenly w-full sm:pr-[30%] sm:pl-[30%] pr-[30%] pl-[30%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]">
+          <div className=" transition-all relative flex justify-evenly w-full sm:pr-[30%] sm:pl-[30%] pr-[30%] pl-[30%] md:pr-[35%] md:pl-[35%] lg:pr-[40%] lg:pl-[40%] xl:pr-[43%] xl:pl-[43%]" >
             <a
               className="flex items-center drop-shadow-md hover:text-blue-600 active:text-blue-600 text-2xl transition-all hover:text-3xl "
-              href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"
+              href="https://www.linkedin.com/in/damodara-prakash-p-b056a2291/"data-aos="fade-right" 
             >
               {" "}
               <FaLinkedinIn />
             </a>
             <a
               className="flex items-center drop-shadow-md hover:text-green-600 active:text-green-600 text-2xl transition-all hover:text-3xl "
-              href="https://github.com/damodara2006"
+              href="https://github.com/damodara2006"data-aos="fade-down" 
             >
               {" "}
               <SiGithub />
             </a>
             <a
               className="flex items-center drop-shadow-md hover:text-pink-600 active:text-red-600 text-2xl transition-all hover:text-3xl "
-              href="https://www.instagram.com/its_me_pdp28/"
+              href="https://www.instagram.com/its_me_pdp28/"data-aos="fade-up-right"
             >
               {" "}
               <FaInstagram />
             </a>
-            <div className="relative flex items-center drop-shadow-md text-2xl transition-all active:text-purple-600  hover:text-3xl hover:text-purple-600 ">
-              <IoIosCall onClick={() => setcall(!call)} />
+            <div className="relative flex items-center drop-shadow-md text-2xl transition-all active:text-purple-600  hover:text-3xl hover:text-purple-600 " data-aos="fade-up-left" >
+              <IoIosCall onClick={() => setcall(!call)} data-aos="ffade-up-left" />
             </div>
             <a
               className="flex items-center drop-shadow-md hover:text-gray-600 active:text-gray-600 text-2xl transition-all hover:text-3xl "
-              href="https://x.com/DPrakash96227"
+              href="https://x.com/DPrakash96227" data-aos="fade-left"
             >
               {" "}
               <BsTwitterX />
