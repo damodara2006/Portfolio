@@ -124,6 +124,18 @@ function Home() {
           </ul>
         </div>
       )}
+      <ToastContainer
+              position="top-center"
+              autoClose={20000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
       <div className="mt-16 flex flex-col items-center">
         <h1 className="lg:text-4xl xl:text-4xl sm:text-3xl md:text-4xl text-3xl text-center font-mono font-extrabold text-white">
           <p className="text-white text-sm absolute right-0 mr-3">{width}</p>
@@ -256,18 +268,7 @@ function Home() {
             >
               Submit
             </button>
-            <ToastContainer
-              position="top-center"
-              autoClose={20000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick={false}
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
-            />
+            
           </form>
         </div>
 
