@@ -1,2 +1,2 @@
 ### Deployed link
-[MIT](https://portfolio-frontend-swwd.onrender.com)
+[PORTFOLIO](https://portfolio-frontend-swwd.onrender.com)
