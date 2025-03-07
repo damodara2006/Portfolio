@@ -251,6 +251,7 @@ function Home() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setemail(e.target.value)}
+              required
             />
             <br />
             <input
@@ -260,6 +261,7 @@ function Home() {
               placeholder="Message me"
               value={message}
               onChange={(e) => setmessage(e.target.value)}
+              required
             />
             <br />
             <button
@@ -287,19 +289,20 @@ function Home() {
               <FaLinkedinIn />
             </a>
             <a
-              className="flex items-center drop-shadow-md hover:text-green-600 active:text-green-600 text-2xl transition-all hover:text-3xl "
-              href="https://github.com/damodara2006"data-aos="fade-down" 
-            >
-              {" "}
-              <SiGithub />
-            </a>
-            <a
               className="flex items-center drop-shadow-md hover:text-pink-600 active:text-red-600 text-2xl transition-all hover:text-3xl "
               href="https://www.instagram.com/its_me_pdp28/"data-aos="fade-up-right"
             >
               {" "}
               <FaInstagram />
             </a>
+            <a
+              className="flex items-center drop-shadow-md hover:text-green-600 active:text-green-600 text-2xl transition-all hover:text-3xl "
+              href="https://github.com/damodara2006"data-aos="fade-down" 
+            >
+              {" "}
+              <SiGithub />
+            </a>
+           
             <div className="relative flex items-center drop-shadow-md text-2xl transition-all active:text-purple-600  hover:text-3xl hover:text-purple-600 " data-aos="fade-up-left" >
               <IoIosCall onClick={() => setcall(!call)} data-aos="ffade-up-left" />
             </div>
