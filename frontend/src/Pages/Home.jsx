@@ -61,7 +61,8 @@ function Home() {
     width = window.innerWidth + " X " + window.innerHeight;
     setwidth(width);
   });
-  function handleClick() {
+  function handleClick(e) {
+    e.preventDefault()
     toast.info("Please wait");
   }
   return (
@@ -262,7 +263,7 @@ function Home() {
             />
             <br />
             <button
-              onClick={() => handleClick()}
+              onClick={(e) => handleClick(e)}
               className="text-sm border px-3 rounded-sm hover:bg-gray-800 transition-all"
               type="submit"
             >
