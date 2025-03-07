@@ -296,7 +296,7 @@ function Home() {
             </a>
             <a
               className="flex items-center drop-shadow-md hover:text-green-600 active:text-green-600 text-2xl transition-all hover:text-3xl "
-              href="https://github.com/damodara2006"data-aos="fade-down" 
+              href="https://github.com/damodara2006"data-aos="fade" 
             >
               {" "}
               <SiGithub />
