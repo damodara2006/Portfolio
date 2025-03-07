@@ -62,7 +62,6 @@ function Home() {
     setwidth(width);
   });
   function handleClick(e) {
-    e.preventDefault()
     toast.info("Please wait");
   }
   return (
