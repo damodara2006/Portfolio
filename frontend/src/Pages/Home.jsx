@@ -159,9 +159,9 @@ function Home() {
             <b className="text-blue-400">Computer Science and Engineering</b>{" "}
             student at{" "}
             <b className="text-indigo-400">Knowledge Institute of Technology</b>
-            , passionate about <b className="text-green-400">programming</b>,{" "}
-            <b className="text-yellow-400">web development</b>, and{" "}
-            <b className="text-teal-400">IoT</b>. My journey started with{" "}
+            , passionate about <b className="text-green-400">programming</b> and{" "}
+            <b className="text-yellow-400">web development</b>
+            <b className="text-teal-400"></b>. My journey started with{" "}
             <b className="text-purple-400">C</b>,{" "}
             <b className="text-purple-400">C++</b>, and{" "}
             <b className="text-purple-400">Java</b>, now expanding into{" "}
