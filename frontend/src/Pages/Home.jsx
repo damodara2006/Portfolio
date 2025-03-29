@@ -6,6 +6,8 @@ import MKCE from "../assets/MKCE.png";
 import Train from "../assets/Train.jpeg";
 import Wificar from "../assets/WIFI-car.jpeg";
 import profile from "../assets/Profile1.jpeg"
+import cloudhut from "../assets/cloudhut.png"
+import chattingapp from "../assets/real-time-chatting-app.png"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
@@ -197,7 +199,7 @@ function Home() {
         "
         >
           <ul className=" mt-7 flex flex-wrap justify-evenly items-center gap-x-16 gap-y-8">
-            {[Train, Wificar].map((list, key) => {
+            {[Train, Wificar ,cloudhut ,chattingapp].map((list, key) => {
               return (
                 <li
                 className="relative group  p-6 border rounded-2xl shadow-lg shadow-gray-300 border-white h-64 
@@ -214,7 +216,13 @@ function Home() {
                 />
                 <p className="absolute inset-0 flex items-center justify-center text-white opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 group-active:opacity-100 ">
                 {key === 1 ? <p  className="flex flex-wrap text-center font-mono w-40" >WI-FI CONTROLLED CAR USING AURDINO</p> : ""}
+                  
                   {key === 0 ? <p className="flex flex-wrap text-center font-mono w-40 ">TRAIN ACCIDENT PREVENTION</p>  : ""}
+                  {key === 2 ?         <a className="text-white z-50" href="https://e-commerce-jjp0.onrender.com"><p  className="flex flex-wrap text-center font-mono w-40 ">CLOUDHUT A E_COMMERCE WEBSITE </p></a>
+                    : ""}
+                {key === 3 ?         <a className="text-white z-50" href="https://chatting-app-pm8f.onrender.com/"><p  className="flex flex-wrap text-center font-mono w-40 ">REAL-TIME CHATTING-APP</p>
+                <p>damo@gmail.com || 12345</p></a>
+                    : ""}
                 </p>
               </li>
               
