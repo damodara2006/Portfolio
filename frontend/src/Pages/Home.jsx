@@ -34,7 +34,7 @@ function Home() {
 
   useEffect(() => {
    axios
-      .get("http://localhost:8000", { withCredentials: true })
+      .get("https://portfolio-mee6.onrender.com", { withCredentials: true })
       .then((res) => {
         setname(res.data.name);
         name.toLowerCase();
