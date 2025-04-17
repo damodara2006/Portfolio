@@ -8,6 +8,11 @@ import Wificar from "../assets/WIFI-car.jpeg";
 import profile from "../assets/Profile1.jpeg"
 import cloudhut from "../assets/cloudhut.png"
 import chattingapp from "../assets/real-time-chatting-app.png"
+import alameenconference from "../assets/Al-Ameen-conference.jpeg";
+import kiotpic from "../assets/Kiot.png"
+import sengunthar from "../assets/sengunthar.webp"
+import Genai from "../assets/GenAi.jpeg"
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
@@ -59,10 +64,10 @@ function Home() {
     AOS.refresh();
   }, []);
 
-  window.addEventListener("resize", () => {
-    width = window.innerWidth + " X " + window.innerHeight;
-    setwidth(width);
-  });
+  // window.addEventListener("resize", () => {
+  //   width = window.innerWidth + " X " + window.innerHeight;
+  //   setwidth(width);
+  // });
   function handleClick(e) {
     toast.info("Please wait");
   }
@@ -75,7 +80,7 @@ function Home() {
         }}`} data-aos="slide-down" data-aos-duration="600"
       >
         <div className="flex justify-between items-center h-14 px-5 lg:px-10 rounded-[4px]" >
-          <h1 className="font-extrabold">PORTFOLIO</h1>
+          <h1 className="font-extrabold">DAMODARA PRAKASH P</h1>
           {navbar ? (
             <nav className="w-4/6 flex justify-end">
               <ul className="flex w-full justify-evenly">
@@ -139,61 +144,200 @@ function Home() {
               theme="dark"
             />
       <div className="mt-16 flex flex-col items-center">
-        <h1 className="lg:text-4xl xl:text-4xl sm:text-3xl md:text-4xl text-3xl text-center font-mono font-extrabold text-white">
+        <h1 className="lg:text-4xl xl:text-4xl sm:text-3xl md:text-4xl text-2xl text-center font-mono font-extrabold text-white">
           <p className="text-white text-sm absolute right-0 mr-3">{width}</p>
           <span>HELLO!</span> <br />I AM{" "}
           <span className="relative text-green-500 after:content-[''] after:absolute after:w-0 after:bottom-0 after:bg-black after:h-full after:right-0  after:transition-all after:duration-200">
             <>DAMODARA PRAKASH P</>
+          <div id="about" ></div>
+
           </span>
         </h1>
         <div className="flex justify-center items-center w-full">
           <div className="relative mt-5 rounded-full lg:rounded-full flex justify-center  w-64 text-white overflow-hidden" data-aos="flip-down" data-aos-duration="900">
             <img className="w-full" src={profile} alt="Profile z-10" />
           </div>
-          <div id="about" ></div>
         </div>
 
-        <div className="flex px-16" data-aos="fade-up" data-aos-duration="600" >
-          <p className="text-gray-300 font-mono text-center mt-8">
-            I’m <b className="text-rose-500">Damodara Prakash</b>, a{" "}
-            <b className="text-blue-400">Computer Science and Engineering</b>{" "}
-            student at{" "}
-            <b className="text-indigo-400">Knowledge Institute of Technology</b>
-            , passionate about <b className="text-green-400">programming</b> and{" "}
-            <b className="text-yellow-400">web development</b>
-            <b className="text-teal-400"></b>. My journey started with{" "}
-            <b className="text-purple-400">C</b>,{" "}
-            <b className="text-purple-400">C++</b>, and{" "}
-            <b className="text-purple-400">Java</b>, now expanding into{" "}
-            <b className="text-cyan-400">full-stack development</b> with{" "}
-            <b className="text-blue-300">React.js</b>,{" "}
-            <b className="text-green-300">Express.js</b>, and databases like{" "}
-            <b className="text-red-300">MySQL</b> &{" "}
-            <b className="text-yellow-300">MongoDB</b>.
-          </p>
+        <div className="flex px-10 lg:px-20 xl:px-20 mt-5" data-aos="fade-up" data-aos-duration="600" >
+          <p className=" text-justify text-2xl font-Roboto text-gray-400" >Computer Science and Engineering student with hands-on experience in full-stack and backend development, contributing to projects like FinQuest, Cloudhut, and Think Green Live Green. Currently expanding skills in artificial intelligence using tools like Jupyter Notebook, Google Colab, and PySpark. Eager to join an innovative, forward-thinking organization where I can contribute, grow, and build scalable, impactful solutions through technology.</p>
         </div>
-        <div  id="achievements" ></div>
+        {/* <div  id="achievements" ></div> */}
+        <hr />
+        <hr className="border-2 w-[90%] mt-5 border-gray-600 rounded-4xl "/>
+        <p
+          className="text-center text-3xl text-green-500 font-extrabold font-mono mt-9"
+        >
+          EDUCATION
+        </p >
+        <div className="px-10 flex gap-10 flex-wrap justify-center mb-12">
+        <div className="flex relative mt-10 ">
+        <img src={kiotpic} className="w-15 mr-10 h-16  left-0 rounded-2xl" alt="" data-aos="flip-left" data-aos-duration="500" data-aos-once="false" data-aos-easing="ease-in-out" />
+       <div className="" >
+       <b className="text-white text-2xl mt-5"><a href="https://kiot.ac.in/">Bachelor of Engineering (B.E), Computer Science & Engineering </a><span className="font-thin text-[16px]">2023 - 2027</span></b>
+       <p className="text-gray-400 text-2xl"><a href="https://kiot.ac.in/">Knowledge Institute Of Technology (KIOT) - Engineering College, Kakapalayam.</a></p>
+       <p className=" absolute right-0 text-xl text-red-500 font-Roboto">CGPA : <span className="text-green-500">7.6</span></p>
+       </div>
+        </div>
+        <div className="flex relative mt-10 ">
+        <img src={sengunthar} className="w-15 mr-10 h-16 left-0 rounded-2xl" alt="" data-aos="flip-right" data-aos-duration="500" data-aos-once="false" data-aos-easing="ease-in-out" />
+
+       <div className="relative" >
+       <b className="text-white text-2xl mt-5"><a href="#">Senior Secondary (XII), Tamil Nadu State Board</a><span className="font-thin text-[16px]">  2021 - 2023</span></b>
+       <p className="text-gray-400 text-2xl"><a href="#">Sengunthar Matriculation Higher Secondary School, Tharamangalam.</a></p>
+       <p className=" absolute right-0 text-xl text-red-500 font-Roboto">Percentage : <span className="text-green-500">84</span></p>
+       </div>
+        </div>
+        <div className="flex relative mt-10 ">
+       <div className="" >
+       <b className="text-white text-2xl mt-5"><a href="https://svmmss.com/">Secondary (X), Tamil Nadu State Board </a><span className="font-thin text-[16px]"> 2010 - 2021</span></b>
+       <p className="text-gray-400 text-2xl"><a href="https://svmmss.com/">Sri Vidya Mandir Matriculation School, Selavadai.</a></p>
+       </div>
+        </div>
+        </div>
+        <hr className="border-2 w-[90%] mt-5 border-gray-600 rounded-4xl "/>
+      
         <p
           className="text-center text-3xl text-rose-500 font-extrabold font-mono mt-9"
         >
-          Achievements
+          TRAINING / PROGRAM
+        </p>
+
+        <div className="mt-5 ">
+          <div className="px-20 flex flex-col text-center justify-center items-center">
+            <p className="text-white text-2xl font-bold mb-5">
+            GENAI APEX PROGRAM
+              </p> 
+              <p className="text-gray-400 text-xl mb-5">i18n Solutions, Salem
+Completed a 5-day GenAI Apex Program, building chatbots with Gemini API and OpenAI, exploring Hugging Face
+models, and learning data analysis in Jupyter Notebook. Demonstrated strong dedication and punctuality throughout
+the course.</p>
+<img src={Genai} className="max-w-80 max-h-80 rounded-2xl" alt="" data-aos="zoom-in" data-aos-duration="500" data-aos-once="false" data-aos-easing="ease-in-out" />
+
+<br />
+
+                    </div>
+
+        </div>
+
+
+        <p
+          className="text-center text-3xl text-sky-600 font-extrabold font-mono mt-9" 
+        >
+          SKILLS
+        </p>
+        <div className="px-4 sm:px-10 md:px-20 lg:px-40 mt-5">
+  <div className="text-white flex flex-wrap gap-5 items-center justify-center w-full">
+
+    <p className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-2 sm:gap-3 justify-between items-center">
+      <span className="font-bold">JAVA</span>
+      <div className="w-[90%] border border-white h-3 rounded-2xl overflow-hidden">
+        <div className="w-[60%] bg-amber-400 h-2.5 rounded-2xl"
+          data-aos="slide-right" data-aos-duration="600" data-aos-once="false" data-aos-easing="ease-out">
+        </div>
+      </div>
+    </p>
+
+    <p className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-2 sm:gap-3 justify-between items-center">
+    <span className="font-bold">C</span>
+
+      <div className="w-[90%] border border-white h-3 rounded-2xl overflow-hidden">
+        <div className="w-[60%] bg-orange-400 h-2.5 rounded-2xl"
+          data-aos="slide-right" data-aos-duration="600" data-aos-once="false" data-aos-easing="ease-out">
+        </div>
+      </div>
+    </p>
+
+    <p className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-2 sm:gap-3 justify-between items-center">
+    <span className="font-bold">C++</span>
+
+      <div className="w-[90%] border border-white h-3 rounded-2xl overflow-hidden">
+        <div className="w-[70%] bg-rose-400 h-2.5 rounded-2xl"
+          data-aos="slide-right" data-aos-duration="600" data-aos-once="false" data-aos-easing="ease-out">
+        </div>
+      </div>
+    </p>
+
+    <p className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-2 sm:gap-3 justify-between items-center">
+    <span className="font-bold">PYTHON</span>
+
+      <div className="w-[90%] border border-white h-3 rounded-2xl overflow-hidden">
+        <div className="w-[60%] bg-red-600 h-2.5 rounded-2xl"
+          data-aos="slide-right" data-aos-duration="600" data-aos-once="false" data-aos-easing="ease-out">
+        </div>
+      </div>
+    </p>
+
+    <p className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-2 sm:gap-3 justify-between items-center">
+    <span className="font-bold">JAVASCRIPT</span>
+
+      <div className="w-[90%] border border-white h-3 rounded-2xl overflow-hidden">
+        <div className="w-[75%] bg-emerald-600 h-2.5 rounded-2xl"
+          data-aos="slide-right" data-aos-duration="900" data-aos-once="false" data-aos-easing="ease-out">
+        </div>
+      </div>
+    </p>
+
+    <p className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-2 sm:gap-3 justify-between items-center">
+    <span className="font-bold">MERN STACK</span>
+
+      <div className="w-[90%] border border-white h-3 rounded-2xl overflow-hidden">
+        <div className="w-[70%] bg-blue-700 h-2.5 rounded-2xl"
+          data-aos="slide-right" data-aos-duration="600" data-aos-once="false" data-aos-easing="ease-out">
+        </div>
+      </div>
+    </p>
+
+    <p className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-2 sm:gap-3 justify-between items-center">
+    <span className="font-bold">GITHUB</span>
+
+      <div className="w-[90%] border border-white h-3 rounded-2xl overflow-hidden">
+        <div className="w-[60%] bg-fuchsia-600 h-2.5 rounded-2xl"
+          data-aos="slide-right" data-aos-duration="600" data-aos-once="false" data-aos-easing="ease-out">
+        </div>
+      </div>
+    </p>
+
+    <p className="flex flex-col sm:flex-row w-full sm:w-[48%] gap-2 sm:gap-3 justify-between items-center">
+    <span className="font-bold">JUPYTER LAB</span>
+
+      <div className="w-[90%] border border-white h-3 rounded-2xl overflow-hidden">
+        <div className="w-[60%] bg-amber-800 h-2.5 rounded-2xl"
+          data-aos="slide-right" data-aos-duration="600" data-aos-once="false" data-aos-easing="ease-out">
+        </div>
+      </div>
+    </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div id="achievements" ></div>
+        <hr className="border-2 w-[90%] mt-5 border-gray-600 rounded-4xl "/>
+        <p
+          className="text-center text-3xl text-rose-500 font-extrabold font-mono mt-9" 
+        >
+          ACHIVEMENTS
         </p>
         <div className="flex justify-items-center gap-8 px-5 justify-evenly mt-7 flex-wrap transition-all" >
-          {[nptel, KIOT2024, MKCE, Learnathon, kongu].map((img, index) => (
+          {[nptel, alameenconference ,KIOT2024  , MKCE, Learnathon, kongu].map((img, index) => (
             <div
               key={index}
-              className="border border-white max-w-80 max-h-80 rounded-2xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden"  data-aos="slide-right" data-aos-duration="600" data-aos-once = "false"
+              className="border border-white max-w-80 max-h-80 rounded-xl shadow-xl shadow-gray-600 transition-transform duration-500 ease-in-out overflow-hidden"  data-aos="slide-right" data-aos-duration="600" data-aos-once = "false"
             >
               <img
-                className="w-full h-full transition-all"
+                className="w-full h-full transition-all "
                 src={img}
                 alt="Achievement"
               />
             </div>
           ))}
         </div>
-
-        <h1 className=" mt-7 text-pink-500 text-3xl font-bold">Projects</h1>
+        <hr className="border-2 w-[90%] mt-10 border-gray-600 rounded-4xl"/>
+        <h1 className=" mt-7 text-pink-500 text-3xl font-bold">PROJECTS</h1>
         <div
           className="w-[100%] flex justify-center
         "
@@ -230,7 +374,7 @@ function Home() {
             })}
           </ul>
         </div>
-
+        
         <div className="mt-12" data-aos="fade-up" data-aos-duration="800">
           <a
             href="/DamodaraPrakash P_Resume.pdf"
@@ -243,10 +387,10 @@ function Home() {
 
         <div
           id="contact"
-          className="mt-10 text-white text-center text-3xl flex flex-col mb-4"
+          className="mt-10 text-white text-center text-3xl flex flex-col mb-3"
           data-aos="flip-up"
         >
-          Contact
+          <p className="mb-3">Contact</p>
           <form
             action={"https://formsubmit.co/damodara2006@gmail.com"}
             method="POST"
