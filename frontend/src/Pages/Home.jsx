@@ -160,7 +160,9 @@ function Home() {
         </div>
 
         <div className="flex px-10 lg:px-20 xl:px-20 mt-5" data-aos="fade-up" data-aos-duration="600" >
-          <p className=" text-justify text-2xl font-Roboto text-gray-400" >Computer Science and Engineering student with hands-on experience in full-stack and backend development, contributing to projects like FinQuest, Cloudhut, and Think Green Live Green. Currently expanding skills in artificial intelligence using tools like Jupyter Notebook, Google Colab, and PySpark. Eager to join an innovative, forward-thinking organization where I can contribute, grow, and build scalable, impactful solutions through technology.</p>
+          <p className=" text-center text-2xl font-Roboto text-gray-400" >Computer Science and Engineering student with experience in full-stack and backend development through projects like FinQuest, Cloudhut, and Think Green Live Green.
+Currently exploring artificial intelligence using Jupyter Notebook, Google Colab, and PySpark.
+Eager to contribute to an innovative team and build scalable, impactful tech solutions.</p>
         </div>
         {/* <div  id="achievements" ></div> */}
         <hr />
