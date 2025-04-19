@@ -379,8 +379,8 @@ the course.</p>
         
         <div className="mt-12" data-aos="fade-up" data-aos-duration="800">
           <a
-            href="/DamodaraPrakash P_Resume.pdf"
-            download="DamodaraPrakash P_Resume.pdf"
+            href="/Damodara_Prakash_P_Resume.pdf"
+            download="Damodara_Prakash_P_Resume.pdf"
             className="text-white bg-green-600 px-4 py-2 rounded-md active:bg-green-700 hover:bg-green-700  transition-all"
           >
             Download Resume
