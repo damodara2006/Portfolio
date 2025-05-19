@@ -12,6 +12,8 @@ import alameenconference from "../assets/Al-Ameen-conference.jpeg";
 import kiotpic from "../assets/Kiot.png"
 import sengunthar from "../assets/sengunthar.webp"
 import Genai from "../assets/GenAi.jpeg"
+import Feedbackform from "../assets/feedback.png"
+import HousePrediction from "../assets/houseprediction.png"
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -324,7 +326,7 @@ the course.</p>
         >
           ACHIVEMENTS
         </p>
-        <div className="flex justify-items-center gap-8 px-5 justify-evenly mt-7 flex-wrap transition-all" >
+        <div className="flex justify-items-center gap-8 px-12 justify-evenly mt-7 flex-wrap transition-all" >
           {[nptel, alameenconference ,KIOT2024  , MKCE, Learnathon, kongu].map((img, index) => (
             <div
               key={index}
@@ -340,12 +342,13 @@ the course.</p>
         </div>
         <hr className="border-2 w-[90%] mt-10 border-gray-600 rounded-4xl"/>
         <h1 className=" mt-7 text-pink-500 text-3xl font-bold">PROJECTS</h1>
+        <p className="text-gray-500 flex flex-wrap px-20 text-center">You can check out my project my hovering the project pic and click on the text</p>
         <div
           className="w-[100%] flex justify-center
         "
         >
           <ul className=" mt-7 flex flex-wrap justify-evenly items-center gap-x-16 gap-y-8">
-            {[Train, Wificar ,cloudhut ,chattingapp].map((list, key) => {
+            {[Train, Wificar ,cloudhut ,chattingapp, Feedbackform, HousePrediction].map((list, key) => {
               return (
                 <li
                 className="relative group  p-6 border rounded-2xl shadow-lg shadow-gray-300 border-white h-64 
@@ -368,6 +371,10 @@ the course.</p>
                     : ""}
                 {key === 3 ?         <a className="text-white z-50" href="https://chatting-app-pm8f.onrender.com/"><p  className="flex flex-wrap text-center font-mono w-40 ">REAL-TIME CHATTING-APP</p>
                 <p>damo@gmail.com || 12345</p></a>
+                    : ""}
+                    {key === 4 ?         <a className="text-white z-50" href="https://idyllic-gelato-6f272a.netlify.app/"><p  className="flex flex-wrap text-center font-mono w-40 items-center justify-center ">FEEDBACK-FORM</p></a>
+                    : ""}
+                    {key === 5 ?         <a className="text-white z-50" href="https://houseprediction-california-gab2djb2uzfgqozcamutxt.streamlit.app/"><p  className="flex flex-wrap text-center font-mono w-40 items-center justify-center ">HOUSE-PREDICTION-CALIFORNIA</p></a>
                     : ""}
                 </p>
               </li>
