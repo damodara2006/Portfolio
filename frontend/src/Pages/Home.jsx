@@ -5,7 +5,7 @@ import Learnathon from "../assets/Learnathon.png";
 import MKCE from "../assets/MKCE.png";
 import Train from "../assets/Train.jpeg";
 import Wificar from "../assets/WIFI-car.jpeg";
-import profile from "../assets/Profile1.jpeg"
+import profile from "../assets/Profile.jpeg"
 import cloudhut from "../assets/cloudhut.png"
 import chattingapp from "../assets/real-time-chatting-app.png"
 import alameenconference from "../assets/Al-Ameen-conference.jpeg";
@@ -385,7 +385,7 @@ the course.</p>
         </div>
         
         <div className="mt-12" data-aos="fade-up" data-aos-duration="800">
-          <a
+          <a 
            href="/Damodara_Prakash_P_Resume1.pdf"
             download="Damodara_Prakash_P_Resume1.pdf"
             className="text-white bg-green-600 px-4 py-2 rounded-md active:bg-green-700 hover:bg-green-700  transition-all"
