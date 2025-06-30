@@ -157,7 +157,7 @@ function Home() {
         </h1>
         <div className="flex justify-center items-center w-full">
           <div className="relative mt-5 rounded-full lg:rounded-full flex justify-center  w-64 text-white overflow-hidden" data-aos="flip-down" data-aos-duration="900">
-            <img className="w-full" src="https://avatars.githubusercontent.com/u/165252354?s=400&u=0837c36d59d24fc19ccf1f055cc2437c9631e89d&v=4" alt="Profile z-10" />
+            <img className="w-full" src={Profile} alt="Profile z-10" />
           </div>
         </div>
 
