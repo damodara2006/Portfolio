@@ -5,7 +5,7 @@ import Learnathon from "../assets/Learnathon.png";
 import MKCE from "../assets/MKCE.png";
 import Train from "../assets/Train.jpeg";
 import Wificar from "../assets/WIFI-car.jpeg";
-import profile from "../assets/Profile.jpeg"
+import profile from "../assets/damodaraprakash.jpeg"
 import cloudhut from "../assets/cloudhut.png"
 import chattingapp from "../assets/real-time-chatting-app.png"
 import alameenconference from "../assets/Al-Ameen-conference.jpeg";
